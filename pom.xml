@@ -3,18 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
-	<artifactId>ecommerce-website</artifactId>
+	<groupId>br.com.devopsnapratica</groupId>
+	<artifactId>lojavirtual-website</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	<name>ecommerce</name>
-	<url>http://www.blc-archetype.com</url>
+	<name>loja-virtual-devops</name>
+	<url>http://www.devopsnapratica.com.br</url>
 	<properties>
 		<blc.version>2.0.1-GA</blc.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<gwt.version>2.4.0</gwt.version>
 	</properties>
-	<description>My Company's eCommerce Website</description>
+	<description>Loja Virtual - Devops na Prática</description>
 	<repositories>
 		<repository>
 			<id>public releases</id>
@@ -167,21 +167,21 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.mycompany</groupId>
+				<groupId>br.com.devopsnapratica</groupId>
 				<artifactId>core</artifactId>
 				<version>1.0</version>
 				<type>jar</type>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
-				<groupId>com.mycompany</groupId>
+				<groupId>br.com.devopsnapratica</groupId>
 				<artifactId>site</artifactId>
 				<version>1.0</version>
 				<type>jar</type>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
-				<groupId>com.mycompany</groupId>
+				<groupId>br.com.devopsnapratica</groupId>
 				<artifactId>admin</artifactId>
 				<version>1.0</version>
 				<type>jar</type>

@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.mycompany</groupId>
-		<artifactId>ecommerce-website</artifactId>
+		<groupId>br.com.devopsnapratica</groupId>
+		<artifactId>lojavirtual-website</artifactId>
 		<version>1.0</version>
 	</parent>
 	<artifactId>admin</artifactId>
 	<packaging>war</packaging>
 	<name>admin</name>
-	<description>Web Module For Customized Broadleaf Commerce Admin</description>
+	<description>Interface de administração da loja virtual</description>
 	<properties>
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 		<!-- httpsPort and httpPort	are used by embeded jetty server.-->
@@ -55,7 +55,7 @@
 				<configuration>
 					<style>DETAILED</style>
 					<modules>
-						<module>com.mycompany.gwt.mycompanyAdmin</module>
+						<module>br.com.devopsnapratica.gwt.devopsnapraticaAdmin</module>
 					</modules>
 					<extraJvmArgs>-XX:MaxPermSize=512M -Xms512M -Xmx1024M</extraJvmArgs>
 				    <noServer>true</noServer>
@@ -108,7 +108,7 @@
 						<fileset>
 							<directory>target</directory>
 							<excludes>
-								<exclude>admin/com.mycompany.gwt.mycompanyAdmin/**</exclude>
+								<exclude>admin/br.com.devopsnapratica.gwt.devopsnapraticaAdmin/**</exclude>
 								<exclude>gwt-unitCache/**</exclude>
 							</excludes>
 							<followSymlinks>false</followSymlinks>
@@ -243,7 +243,7 @@
 			<artifactId>broadleaf-common</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.mycompany</groupId>
+			<groupId>br.com.devopsnapratica</groupId>
 			<artifactId>core</artifactId>
 		</dependency>
 		<dependency>

@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
          http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
 
-	<display-name>mycompany-admin</display-name>
+	<display-name>devopsnapratica-admin</display-name>
 
 	<context-param>
 		<param-name>webAppRootKey</param-name>
@@ -139,7 +139,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>remoteLogging</servlet-name>
-        <url-pattern>/com.mycompany.gwt.mycompanyAdmin/remote_logging</url-pattern>
+        <url-pattern>/br.com.devopsnapratica.gwt.devopsnapraticaAdmin/remote_logging</url-pattern>
     </servlet-mapping>
 	
 	<resource-ref>

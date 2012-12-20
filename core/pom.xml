@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.mycompany</groupId>
-		<artifactId>ecommerce-website</artifactId>
+		<groupId>br.com.devopsnapratica</groupId>
+		<artifactId>lojavirtual-website</artifactId>
 		<version>1.0</version>
 	</parent>
 	<artifactId>core</artifactId>
 	<name>core</name>
-	<description>Customizations And Extensions For Broadleaf Commerce Services And Entities</description>
+	<description>Customizações e extensões para a loja virtual</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
