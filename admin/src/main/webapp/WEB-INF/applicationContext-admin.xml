@@ -7,9 +7,9 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
-		http://www.springframework.org/schema/jee
-		http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
-		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+        http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.1.xsd
@@ -33,7 +33,7 @@
     <bean id="blMergedPersistenceXmlLocations" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
-             	<value>classpath*:/META-INF/persistence.xml</value>
+                <value>classpath*:/META-INF/persistence.xml</value>
             </list>
         </property>
     </bean>
@@ -50,15 +50,86 @@
     <bean id="blMergedCacheConfigLocations" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
-                <value>classpath:bl-override-ehcache.xml</value>
+                <value>classpath:bl-override-ehcache-admin.xml</value>
             </list>
         </property>
     </bean>
+
+    <!-- A dummy mail sender has been set to send emails for testing purposes only
+             To view the emails sent use "DevNull SMTP" (download separately) with the following setting:
+                Port: 30000 -->
+    <!--<bean id="blMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host"><value>localhost</value></property>
+        <property name="port"><value>3000</value></property>
+        <property name="protocol"><value>smtp</value></property>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.timeout">25000</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="blVelocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="resourceLoaderPath" value="/WEB-INF/emailTemplates/" />
+        <property name="velocityProperties">
+            <value>
+                resource.loader=file,class
+                class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+                runtime.references.strict = false
+            </value>
+        </property>
+    </bean>
+
+    <bean id="blMessageCreator" class="org.broadleafcommerce.common.email.service.message.VelocityMessageCreator">
+        <constructor-arg ref="blVelocityEngine" />
+        <constructor-arg ref="blMailSender" />
+        <constructor-arg>
+            <map>
+                <entry key="number">
+                    <bean class="org.apache.velocity.tools.generic.NumberTool" scope="prototype" />
+                </entry>
+                <entry key="date">
+                    <bean class="org.apache.velocity.tools.generic.ComparisonDateTool" scope="prototype" />
+                </entry>
+                <entry key="list">
+                    <bean class="org.apache.velocity.tools.generic.ListTool" scope="prototype" />
+                </entry>
+                <entry key="math">
+                    <bean class="org.apache.velocity.tools.generic.MathTool" scope="prototype" />
+                </entry>
+                <entry key="iterator">
+                    <bean class="org.apache.velocity.tools.generic.IteratorTool" scope="prototype" />
+                </entry>
+                <entry key="alternator">
+                    <bean class="org.apache.velocity.tools.generic.AlternatorTool" scope="prototype" />
+                </entry>
+                <entry key="sorter">
+                    <bean class="org.apache.velocity.tools.generic.SortTool" scope="prototype" />
+                </entry>
+                <entry key="esc">
+                    <bean class="org.apache.velocity.tools.generic.EscapeTool" scope="prototype" />
+                </entry>
+                <entry key="serverInfo" value-ref="blServerInfo" />
+            </map>
+        </constructor-arg>
+    </bean>-->
     
     <bean id="blMessageCreator" class="org.broadleafcommerce.common.email.service.message.NullMessageCreator">
-    	<constructor-arg ref="blMailSender"/>
+        <constructor-arg ref="blMailSender"/>
     </bean>
     
     <bean id="blPrecompressedArtifactFilter" class="org.broadleafcommerce.common.web.util.PrecompressedArtifactFilter"/>
+
+    <bean id="resourceBundleExtensionPoint" class="org.broadleafcommerce.common.util.ResourceBundleExtensionPoint" />
+    <bean id="messageSource"
+          class="org.broadleafcommerce.common.util.BLResourceBundleMessageSource">
+        <constructor-arg>
+            <list>
+                <value>messages-admin</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg ref="resourceBundleExtensionPoint" />
+    </bean>
 
 </beans>
