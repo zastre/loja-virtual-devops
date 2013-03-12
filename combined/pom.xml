@@ -3,18 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ecommerce-website</artifactId>
-        <groupId>com.mycompany</groupId>
+        <artifactId>lojavirtual-website</artifactId>
+        <groupId>br.com.devopsnapratica</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>combined</artifactId>
     <packaging>war</packaging>
     <name>combined</name>
-    <description>Combined Web Module For Broadleaf Commerce Based ECommerce Site</description>
+    <description>Módulo combinado da loja virtual devops</description>
     <properties>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-        <gwtModule>com.mycompany.gwt.mycompanyAdmin</gwtModule>
+        <gwtModule>br.com.devopsnapratica.gwt.devopsnapraticaAdmin</gwtModule>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- httpsPort and httpPort are used by embeded jetty server.-->
         <!-- Make sure the following httpsPort matches what's in the runtime-properties file,  -->
@@ -23,7 +23,7 @@
     </properties>
     <build>
         <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-        <finalName>mycompany</finalName>
+        <finalName>devopsnapratica</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -33,7 +33,7 @@
                     <overlays>
                         <overlay>
                             <id>admin-js</id>
-                            <groupId>com.mycompany</groupId>
+                            <groupId>br.com.devopsnapratica</groupId>
                             <artifactId>admin</artifactId>
                             <includes>
                                 <include>${gwtModule}/**</include>
@@ -45,7 +45,7 @@
                         behavior for the combined application -->
                         <overlay>
                             <id>site-regular</id>
-                            <groupId>com.mycompany</groupId>
+                            <groupId>br.com.devopsnapratica</groupId>
                             <artifactId>site</artifactId>
                             <excludes>
                                 <exclude>WEB-INF/applicationContext-security.xml</exclude>
@@ -55,7 +55,7 @@
                         </overlay>
                         <overlay>
                             <id>admin-regular</id>
-                            <groupId>com.mycompany</groupId>
+                            <groupId>br.com.devopsnapratica</groupId>
                             <artifactId>admin</artifactId>
                             <excludes>
                                 <exclude>${gwtModule}/**</exclude>
@@ -129,7 +129,7 @@
                         <resources>
                             <resource/>
                             <resource>
-                                <directory>../site/target/mycompany/WEB-INF/classes</directory>
+                                <directory>../site/target/devopsnapratica/WEB-INF/classes</directory>
                             </resource>
                             <resource>
                                 <directory>../site/src/main/java</directory>
@@ -187,13 +187,13 @@
             </activation>
             <dependencies>
                 <dependency>
-                    <groupId>com.mycompany</groupId>
+                    <groupId>br.com.devopsnapratica</groupId>
                     <artifactId>site</artifactId>
                     <version>1.0</version>
                     <type>war</type>
                 </dependency>
                 <dependency>
-                    <groupId>com.mycompany</groupId>
+                    <groupId>br.com.devopsnapratica</groupId>
                     <artifactId>admin</artifactId>
                     <version>1.0</version>
                     <type>war</type>
@@ -219,7 +219,7 @@
             <artifactId>broadleaf-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.mycompany</groupId>
+            <groupId>br.com.devopsnapratica</groupId>
             <artifactId>core</artifactId>
         </dependency>
         <dependency>

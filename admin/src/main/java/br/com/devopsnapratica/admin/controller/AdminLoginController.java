@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mycompany.admin.controller;
+package br.com.devopsnapratica.admin.controller;
 
 import org.apache.commons.lang.StringUtils;
 import org.broadleafcommerce.openadmin.web.controller.BroadleafAdminLoginController;
@@ -40,7 +40,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  */
 public class AdminLoginController extends BroadleafAdminLoginController {
-    
+
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String baseRedirect(HttpServletRequest request, HttpServletResponse response, Model model) {
         return super.loginSuccess(request, response, model);
