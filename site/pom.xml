@@ -115,8 +115,8 @@
             <artifactId>broadleaf-framework-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
