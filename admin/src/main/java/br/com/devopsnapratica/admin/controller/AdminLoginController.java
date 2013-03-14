@@ -17,6 +17,7 @@
 package br.com.devopsnapratica.admin.controller;
 
 import org.apache.commons.lang.StringUtils;
+import org.broadleafcommerce.openadmin.server.security.service.AdminSecurityService;
 import org.broadleafcommerce.openadmin.web.controller.BroadleafAdminLoginController;
 import org.broadleafcommerce.openadmin.web.form.ResetPasswordForm;
 import org.springframework.stereotype.Controller;
@@ -40,6 +41,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  */
 public class AdminLoginController extends BroadleafAdminLoginController {
+
+    // Package-protected constructor to inject dependencies for testing
+    AdminLoginController(AdminSecurityService adminSecurityService) {
+        this.adminSecurityService = adminSecurityService;
+    }
+
+    public AdminLoginController() {
+        // Keeping default constructor
+    }
 
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String baseRedirect(HttpServletRequest request, HttpServletResponse response, Model model) {
@@ -90,7 +100,7 @@ public class AdminLoginController extends BroadleafAdminLoginController {
     }
 
     @RequestMapping(value="/changePassword", method=RequestMethod.POST)
-    public String processchangePassword(@ModelAttribute("resetPasswordForm") ResetPasswordForm resetPasswordForm, HttpServletRequest request, HttpServletResponse response, Model model) {
+    public String processChangePassword(@ModelAttribute("resetPasswordForm") ResetPasswordForm resetPasswordForm, HttpServletRequest request, HttpServletResponse response, Model model) {
         return super.processChangePassword(resetPasswordForm, request);
     }
 
