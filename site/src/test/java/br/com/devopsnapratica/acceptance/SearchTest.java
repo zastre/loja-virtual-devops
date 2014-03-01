@@ -20,7 +20,7 @@ public class SearchTest {
     @Before
     public void openBrowser() throws InterruptedException {
         driver = new HtmlUnitDriver();
-        driver.get("http://localhost:8080/");
+        driver.get("http://localhost:7070/");
         Thread.sleep(5000); // Waiting for Solr index
     }
 
