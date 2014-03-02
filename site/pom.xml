@@ -130,13 +130,6 @@
                             <goal>start</goal>
                         </goals>
                     </execution>
-                    <execution>
-                        <id>stop-hsqldb</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
                 </executions>
             </plugin>
 
