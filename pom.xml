@@ -92,6 +92,7 @@
                                         <versionRange>
                                             [1.5,)
                                         </versionRange>
+
                                         <goals>
                                             <goal>clean</goal>
                                             <goal>generateKeyPair</goal>
